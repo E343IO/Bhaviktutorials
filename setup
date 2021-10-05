@@ -93,7 +93,7 @@ setup_ngrok
 fi
 }
 
-setup_ngrok() {
+function setup_ngrok() {
 	       if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
 	        echo ""
                 echo -e ${red}"ngrok not detected \n"
@@ -114,7 +114,7 @@ setup_ngrok() {
 		final_touchup
 }
 
-fnltouchup() {
+function fnltouchup() {
 for i in shark; do
                 chmod +x ${main}/${i}
                 mv ${main}/${i} ${BIN}
@@ -122,7 +122,7 @@ for i in shark; do
         done
 }
 
-final_touchup() {
+function final_touchup() {
 	for i in shark; do
 		chmod +x ${main}/${i}
 		mv ${main}/${i} ${BIN}
