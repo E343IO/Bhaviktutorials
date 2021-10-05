@@ -136,8 +136,8 @@ final_touchup() {
 
 
 os
-#dependencies
-#git_clone
+dependencies
+git_clone
 ngrk_set
 
 #####################################
