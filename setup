@@ -81,10 +81,10 @@ function dependencies() {
 function ngrk_set () {
 echo ""
 if [ -f "$ngrk" ]; then
-echo -e ${green}"ngrok is detected \n"
+printf ${green}"ngrok is detected \n"
 echo
 sleep 2
-echo -e "no need to download ngrok just turn on hotspot! \n"
+printf "no need to download ngrok just turn on hotspot! \n"
 echo
 sleep 2
 fnltouchup
@@ -96,9 +96,9 @@ fi
 function setup_ngrok() {
 	       if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
 	        echo ""
-                echo -e ${red}"ngrok not detected \n"
+                printf ${red}"ngrok not detected \n"
 		sleep 0.5
-		echo -e ${green}"Installng ngrok... \n"
+		printf ${green}"Installng ngrok... \n"
 		sleep 0.5
 		ngrok_url="https://github.com/Linux-Droid/Ngrok/raw/master/Ngrok_Linux_Droid.zip"
 		elif [[ "$arch" == *'aarch64'* ]]; then
@@ -129,7 +129,7 @@ function final_touchup() {
 		printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
 	done
 	if [ ${OS} != "DEBIAN" ]; then
-		echo -en "\n\n $yellow Just paste your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don't use ./ before the token $nc  \n"
+		printf "\n\n $yellow Just paste your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don't use ./ before the token $nc  \n"
 		read ngrok_authtoken 
 		$ngrok_authtoken > /dev/null 2&>1
 	fi
