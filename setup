@@ -78,7 +78,7 @@ function dependencies() {
 }
 
 
-function ngrk_set () {
+function ngrk_set() {
 echo ""
 if [ -f "$ngrk" ]; then
 printf ${green}"ngrok is detected \n"
