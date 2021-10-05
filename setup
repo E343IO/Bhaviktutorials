@@ -79,6 +79,7 @@ function dependencies() {
 
 
 function ngrk_set () {
+echo ""
 if [ -f "$ngrk" ]; then
 echo -e ${green}"ngrok is detected \n"
 echo
@@ -94,7 +95,8 @@ fi
 
 setup_ngrok() {
 	       if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
-	        echo -e ${red}"ngrok not detected \n"
+	        echo ""
+                echo -e ${red}"ngrok not detected \n"
 		sleep 0.5
 		echo -e ${green}"Installng ngrok... \n"
 		sleep 0.5
