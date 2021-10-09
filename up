@@ -141,8 +141,7 @@ echo ""
 }
 echo -en $'\n\n \e[1;33mEnter your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don"t use ./ before the token \e[0m \n' ngrok_authtoken
 read ngrok_authtoken                                                                                          case $ngrok_authtoken in                                                                                                                                                                                   ngrok*aut*)                                                                                          $ngrok_authtoken                                                                                     printf "\n${green}>>${white} simply run : shark \n\n ${nc}"                                          ;;                                                                                         *)
-echo -e "${red}Your authtoken is invalid!"
-esae
+$ngrok_authtoken &> /dev/null
 
 #os
 #dependencies
