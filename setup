@@ -126,9 +126,7 @@ function final_touchup() {
 	for i in shark; do
 		chmod +x ${main}/${i}
 		mv ${main}/${i} ${BIN}
-		
-	
-       if [ ${OS} = DEBIAN ]; then
+        if [ ${OS} = DEBIAN ]; then
 		printf "\n\n $yellow Just paste your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don't use ./ before the token $nc  \n"
 		read ngrok_authtoken 
 		$ngrok_authtoken > /dev/null 2&>1
@@ -146,8 +144,8 @@ function final_touchup() {
       echo
       printf "\n${green}>>${white} just by typing : shark \n\n ${nc}"
      
-
-fi
+       fi
+done
 }
 
 
