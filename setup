@@ -126,20 +126,25 @@ function final_touchup() {
 	for i in shark; do
 		chmod +x ${main}/${i}
 		mv ${main}/${i} ${BIN}
-		printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
-	done
+		
 	
        if [ ${OS} = DEBIAN ]; then
 		printf "\n\n $yellow Just paste your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don't use ./ before the token $nc  \n"
 		read ngrok_authtoken 
 		$ngrok_authtoken > /dev/null 2&>1
+                sleep 1
+                printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
       elif [ ${OS} = TERMUX ]; then
                 read -p $'ur authtoken: \n ./' token
                 $token &> /dev/null
+                sleep 1
+                printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
 
       else 
       sleep 0.5
       echo "step-1 :-Do setup your ngrok just by pasting authtoken manually! \nstep-2 :-Go and sign-up to 👉 ngrok.io 👈 and get your authtoken from dashboard copy the authtoken without this 👉 ./ 👈 \nstep-3:- Now paste authtoken to your terminal \nstep-4 :- Enjoy The best Phishing tool!"
+      echo
+      printf "\n${green}>>${white} just by typing : shark \n\n ${nc}"
      
 
 fi
