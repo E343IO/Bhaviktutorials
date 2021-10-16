@@ -87,9 +87,7 @@ sleep 2
 printf "no need to download ngrok just turn on hotspot! \n"
 echo
 sleep 2
-fnltouchup
-else
-setup_ngrok
+final_touchup
 fi
 }
 
