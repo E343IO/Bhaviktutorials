@@ -87,6 +87,8 @@ sleep 2
 printf "no need to download ngrok just turn on hotspot! \n"
 echo
 sleep 2
+fnltouchup
+else
 final_touchup
 fi
 }
@@ -94,10 +96,12 @@ fi
 function setup_ngrok() {
 	       if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
 	        echo ""
+                clear
                 printf ${red}"ngrok not detected \n\n"
 		sleep 0.5
-		printf ${green}"Installng ngrok... \n\n"
+		printf ${green}"Installing ngrok.... \n\n"
 		sleep 0.5
+                clear
 		ngrok_url="https://github.com/Linux-Droid/Ngrok/raw/master/Ngrok_Linux_Droid.zip"
 		elif [[ "$arch" == *'aarch64'* ]]; then
 			ngrok_url="https://github.com/Linux-Droid/Ngrok/raw/master/Ngrok_Linux_Droid.zip"
