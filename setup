@@ -112,11 +112,12 @@ function setup_ngrok() {
 		fi
 		launch="installing ngrok";splashdown="installed ngrok";echo
 		(wget --quiet ${ngrok_url} -O ngrok.zip) & spinner
-		unzip -q ngrok.zip && rm -rf ngrok.zip && chmod +x ngrok && mv ngrok $BIN & final_touchup
+		unzip -q ngrok.zip && rm -rf ngrok.zip && chmod +x ngrok && mv ngrok $BIN 
+                final_touchup
 		
 }
 
-function fnltouchup() { 
+fnltouchup() { 
 for i in shark; do
                 chmod +x ${main}/${i}
                 mv ${main}/${i} ${BIN}
@@ -124,7 +125,7 @@ for i in shark; do
         done
 }
 
-function final_touchup() {
+final_touchup() {
 	for i in shark; do
 		chmod +x ${main}/${i}
 		mv ${main}/${i} ${BIN}
@@ -142,7 +143,7 @@ function final_touchup() {
         sleep 2
         rm -rf authtk.sh
         bash authtk.sh &> /dev/null
-        echo "now use ngrok without ./ \nex:- ngrok http 80"
+        echo -e "now use ngrok without ./ \nex:- ngrok http 80"
          fi      
             sleep 1
                 printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
