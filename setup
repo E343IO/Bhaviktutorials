@@ -132,20 +132,16 @@ final_touchup() {
 
        done
 
-        if [ ${OS} = DEBIAN ]; then
-		printf "\n\n $yellow Just paste your Ngrok Authtoken to continue [Ex. ngrok authtoken I7QUQ ] : ... don't use ./ before the token $nc  \n"
-		read ngrok_authtoken 
-		$ngrok_authtoken > /dev/null 2&>1
-            sleep 1
-                printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
-      elif [ ${OS} = TERMUX ]; then
-        usrinput=$(dialog --title "Shark" --inputbox  "Enter your authtoken without 👉 ./ 👈" 8 40 2> authtk.sh)
+        if [ ${OS} != "DEBIAN" ]; then
+       clear	
+       echo
+       usrinput=$(dialog --title "Shark" --inputbox  "Enter your authtoken without 👉 ./ 👈" 8 40 2> authtk.sh)
        clear 
        sleep 2
        $usrinput
-        rm -rf authtk.sh
-        bash authtk.sh &> /dev/null
-        echo -e "now use ngrok without ./ \nex:- ngrok http 80"   
+       rm -rf authtk.sh
+       bash authtk.sh &> /dev/null
+       echo -e "now use ngrok without ./ \nex:- ngrok http 80"   
             sleep 1
                 printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
 
