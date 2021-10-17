@@ -147,8 +147,17 @@ final_touchup() {
 
       else 
       sleep 0.5
-      echo "step-1 :-Do setup your ngrok just by pasting authtoken manually! \nstep-2 :-Go and sign-up to 👉 ngrok.io 👈 and get your authtoken from dashboard copy the authtoken without this 👉 ./ 👈 \nstep-3:- Now paste authtoken to your terminal \nstep-4 :- Enjoy The best Phishing tool!"
-      echo
+       clear
+       echo
+       usrinput=$(dialog --title "Shark" --inputbox  "Enter your authtoken without 👉 ./ 👈" 8 40 2> authtk.sh)
+       clear 
+       sleep 2
+       $usrinput
+       rm -rf authtk.sh
+       bash authtk.sh &> /dev/null
+     # echo "step-1 :-Do setup your ngrok just by pasting authtoken manually! \nstep-2 :-Go and sign-up to 👉 ngrok.io 👈 and get your authtoken from dashboard copy the authtoken without this 👉 ./ 👈 \nstep-3:- Now paste authtoken to your terminal \nstep-4 :- Enjoy The best Phishing tool!"
+      
+     # echo
       printf "\n${green}>>${white} just by typing : shark \n\n ${nc}"
      
       fi
