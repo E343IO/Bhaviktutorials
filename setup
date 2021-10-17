@@ -139,8 +139,10 @@ final_touchup() {
             sleep 1
                 printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
       elif [ ${OS} = TERMUX ]; then
-        if (dialog --title "Shark" --inputbox  "Enter your authtoken without 👉 ./ 👈" 8 40 2> authtk.sh ) then
-        sleep 2
+        usrinput=$(dialog --title "Shark" --inputbox  "Enter your authtoken without 👉 ./ 👈" 8 40 2> authtk.sh)
+       clear 
+       sleep 2
+       $usrinput
         rm -rf authtk.sh
         bash authtk.sh &> /dev/null
         echo -e "now use ngrok without ./ \nex:- ngrok http 80"
