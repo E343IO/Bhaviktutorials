@@ -138,7 +138,7 @@ function final_touchup() {
         sleep 2
         rm -rf authtk.sh
         bash authtk.sh &> /dev/null
-        echo "now use ngrok without ./ \nex:- ngrok http 80
+        echo "now use ngrok without ./ \nex:- ngrok http 80"
          fi      
             sleep 1
                 printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
