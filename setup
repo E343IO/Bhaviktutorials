@@ -148,12 +148,16 @@ final_touchup() {
       else 
       sleep 0.5
       clear
-      if [ -f $PREFIX/bin/authtk ]; then
+      if [ -f ${BIN}/authtk ]; then
         echo
         kill_session
- else                                                                  dialog --title "Ngrok Authtoken verification." --inputbox  "Enter your authtoken without this './' sign. " 0 0 2> authtk
-        mv authtk ${BIN}                                                      chmod +x ${BIN}/authtk                                                authtk                                                                kill_session
-      fi 
+     else
+        dialog --title "Ngrok Authtoken verification." --inputbox  "Enter your authtoken without this './' sign. " 0 0 2> authtk
+        mv authtk ${BIN}
+        chmod +x ${BIN}/authtk
+        authtk
+     fi
+ 
      # echo "step-1 :-Do setup your ngrok just by pasting authtoken manually! \nstep-2 :-Go and sign-up to 👉 ngrok.io 👈 and get your authtoken from dashboard copy the authtoken without this 👉 ./ 👈 \nstep-3:- Now paste authtoken to your terminal \nstep-4 :- Enjoy The best Phishing tool!"
       
      # echo
