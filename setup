@@ -20,12 +20,8 @@ fiuscha="\033[0;35m"                                        ##
 blue="\033[1;34m"                                           ##
 l_red="\033[1;37;41m"                                       ##
 nc="\033[0m"                                                ## 
-
 arch=`uname -m`
 clear
-cd $HOME
-cd
-rm -rf shark
 pkg install ncurses-utils -y &> /dev/null
 #spinner
 spinner() {
@@ -113,7 +109,7 @@ function setup_ngrok() {
 		launch="installing ngrok";splashdown="installed ngrok";echo
 		(wget --quiet ${ngrok_url} -O ngrok.zip) & spinner
 		unzip -q ngrok.zip && rm -rf ngrok.zip && chmod +x ngrok && mv ngrok $BIN 
-                final_touchup
+                
 		
 }
 
@@ -125,11 +121,10 @@ function setup_ngrok() {
 #        done
 #}
 
-final_touchup() {
+function final_touchup() {
 	for i in shark; do
 		chmod +x ${main}/${i}
 		mv ${main}/${i} ${BIN}
-
        done
 
         if [ ${OS} = DEBIAN ]; then
@@ -157,6 +152,7 @@ os
 dependencies
 git_clone
 setup_ngrok
+final_touchup
 #ngrk_set
 
 #####################################
