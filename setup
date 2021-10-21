@@ -78,20 +78,20 @@ function dependencies() {
 }
 
 
-function ngrk_set() {
-echo ""
-if [ -f "$ngrk" ]; then
-printf ${green}"ngrok is detected \n"
-echo
-sleep 2
-printf "no need to download ngrok just turn on hotspot! \n"
-echo
-sleep 2
-fnltouchup
-else
-setup_ngrok
-fi
-}
+#function ngrk_set() {
+#echo ""
+#if [ -f "$ngrk" ]; then
+#printf ${green}"ngrok is detected \n"
+#echo
+#sleep 2
+#printf "no need to download ngrok just turn on hotspot! \n"
+#echo
+#sleep 2
+#fnltouchup
+#else
+#setup_ngrok
+#fi
+#}
 
 function setup_ngrok() {
 	       if [[ ("$arch" == *'arm'*) || ("$arch" == *'Android'*) ]]; then
@@ -117,13 +117,13 @@ function setup_ngrok() {
 		
 }
 
-fnltouchup() { 
-for i in shark; do
-                chmod +x ${main}/${i}
-                mv ${main}/${i} ${BIN}
-                printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
-        done
-}
+#fnltouchup() { 
+#for i in shark; do
+#                chmod +x ${main}/${i}
+#                mv ${main}/${i} ${BIN}
+#                printf "\n${green}>>${white} simply run : shark \n\n ${nc}"
+#        done
+#}
 
 final_touchup() {
 	for i in shark; do
@@ -156,7 +156,8 @@ final_touchup() {
 os
 dependencies
 git_clone
-ngrk_set
+setup_ngrok
+#ngrk_set
 
 #####################################
 #       DON'T TRY TO COPY 😂😂     #
